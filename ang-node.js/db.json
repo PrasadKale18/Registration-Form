@@ -1,0 +1,29 @@
+{
+  "posts": [
+    {
+      "username": "kailas",
+      "email": "erere@gmail.com",
+      "password": "123123",
+      "confirmpassword": "123123",
+      "id": 5
+    },
+    {
+      "username": "rahul",
+      "email": "r",
+      "password": "123123",
+      "confirmpassword": "123123",
+      "id": 6
+    },
+    {
+      "username": "Sanchit Thorat",
+      "email": "sanchit53@gmail.com",
+      "password": "123456",
+      "confirmpassword": "123456",
+      "id": 7
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,35 @@
+<form [formGroup]="Registrationform" class="top">
+  <h3><u>Register Here</u></h3>
+  <div>
+    <label for="username">Name:</label>
+    <input type="text" formControlName="username" placeholder="name"
+      [ngClass]="{'invalid':username.errors?.required && username.touched}">
+    <div *ngIf="username.errors?.required && username.touched" class="clr">username is required</div>
+    <div *ngIf="username.errors?.pattern && username.touched" class="clr">username must be alphabet</div>
+  </div>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" formControlName="email" placeholder="Email"
+      [ngClass]="{'invalid':email.errors?.required && username.touched}">
+    <div *ngIf="email.errors?.required && email.touched" class="clr">email is required</div>
+    <div *ngIf="email.errors?.email && email.touched" class="clr">enter a valid email</div>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" formControlName="password" placeholder="Password"
+      [ngClass]="{'invalid':password.errors?.required && password.touched}">
+    <div *ngIf="password.errors?.required && password.touched" class="clr">password is required</div>
+    <div *ngIf="password.errors?.minlength && password.touched" class="clr">password must be at least 6 char.</div>
+  </div>
+  <div>
+    <label for="confirmpassword">Confirm Password:</label>
+    <input type="password" formControlName="confirmpassword" placeholder="Confirm Password"
+      [ngClass]="{'invalid': confirmpassword.errors?.passwordMismatch && confirmpassword.touched}">
+    <div *ngIf="confirmpassword.errors?.required && confirmpassword.touched">Confirm password is required</div>
+    <div *ngIf="confirmpassword.errors?.passwordMismatch && confirmpassword.touched" class="clr">Passwords do not match
+    </div>
+  </div>
+
+  <button (click)="onSubmit()">Register</button>
+  <div class="mt-2 centre">Already have an account? <a routerLink="/login">Login</a></div>
+</form>

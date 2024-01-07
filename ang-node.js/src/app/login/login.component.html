@@ -1,0 +1,26 @@
+<form [formGroup]="loginform" class="top">
+  <h3 class="text"><u>Login Here</u></h3>
+  <br>
+  <div>
+    <label for="email">Email:</label>
+    <input type="email" formControlName="email" placeholder="Email"
+      [ngClass]="{'invalid':email.errors?.required && email.touched}">
+    <div *ngIf="email.errors?.required && email.touched" class="clr">email is required</div>
+    <div *ngIf="email.errors?.email && email.touched" class="clr">enter a valid email</div>
+  </div>
+  <div>
+    <label for="password">Password:</label>
+    <input type="password" formControlName="password" placeholder="Password"
+      [ngClass]="{'invalid':password.errors?.required && password.touched}">
+    <div *ngIf="password.errors?.required && password.touched" class="clr">password is required</div>
+    <div *ngIf="password.errors?.minlength && password.touched" class="clr">password must be at least 6 char.</div>
+  </div>
+  <div class="bigbtn">
+
+    <button (click)="onSubmit()">Login</button>
+  </div>
+
+
+
+  <div class="mt-1 centre">Don't have an account? <a routerLink="/register">Sign up</a></div>
+</form>
